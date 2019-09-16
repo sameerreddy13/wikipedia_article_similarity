@@ -46,7 +46,7 @@ def plot_tsne(X, n_components, corpus, Xt=None, **kwargs):
 
     return Xt
 
-def plot_linear_regression(lr, Xt, corpus):
+def plot_logistic_regression(lr, Xt, corpus):
 
     fig = plt.figure(figsize=(7, 7))
     ax = plt.axes()

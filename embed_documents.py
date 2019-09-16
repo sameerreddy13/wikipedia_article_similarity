@@ -21,7 +21,13 @@ def load_Y(corpus):
 def errors(Y_pred, Y):
     return np.argwhere(Y_pred != Y).flatten()
 
-# def get_logistic_regressor()
+def fit_logistic_regression(lr, Xt, corpus):
+    Xt = preprocessing.scale(Xt)
+    lr = LogisticRegressionCV()
+    Y, le = load_Y(corpus)
+    lr.fit(Xt, Y)
+    print("Accuracy = {}".format(lr.score(Xt, Y)))
+    return lr, Xt
 
 def build_knn(X):
     knn = neighbors.NearestNeighbors(metric='cosine')
